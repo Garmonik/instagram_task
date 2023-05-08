@@ -1,0 +1,6 @@
+*.html
+*.idea
+__pycache__/
+venv/
+routers.__pycache__/
+routers.idea

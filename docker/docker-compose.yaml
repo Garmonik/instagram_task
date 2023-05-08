@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - selenium
+    environment:
+      - MAX_INSTANCES=3
+
+  selenium:
+    image: selenoid/standalone-chrome
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    environment:
+      - MAX_INSTANCES=3
